@@ -253,6 +253,9 @@
 
 .detail-bottom-left {
     width: 745px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
 }
 
 .detail-bottom-right {
@@ -339,6 +342,14 @@
 /* 테스트 이미지 변경 해야함 */
 .test-img-test {
     height: 730px;
+    width: 745px;
+    border: 1px solid black;
+}
+
+/* 리뷰 이미지 */
+.detail-bottom-review-img {
+    height: 124px;
+    width: 124px;
     border: 1px solid black;
 }
 
@@ -350,3 +361,295 @@
 /* 테스트 이미지 변경 해야함 */
 /* 테스트 이미지 변경 해야함 */
 /* 테스트 이미지 변경 해야함 */
+
+/* 하단 리뷰 */
+
+.detail-bottom-review-box-div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.detail-bottom-reivew {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-bottom-review-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-bottom-ask-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-bottom-review-span,
+.detail-bottom-review-count {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.detail-bottom-review-span {
+    color: #303441;
+}
+
+.detail-bottom-review-count {
+    margin-left: 5px;
+    color: #ff5833;
+}
+
+.detail-bottom-review-nickname {
+    font-size: 14px;
+    font-weight: 600;
+    color: #303441;
+}
+
+.detail-bottom-review-start-list-div {
+    display: flex;
+    align-items: flex-end;
+}
+
+.detail-bottom-review-created {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.detail-bottom-review-content {
+    font-size: 14px;
+}
+
+/* 하단 문의 */
+.detail-bottom-ask-box-div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.detail-bottom-ask-title-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-bottom-ask-span,
+.detail-bottom-ask-count {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.detail-bottom-ask-span {
+    color: #303441;
+}
+
+.detail-bottom-ask-count {
+    color: #ff5833;
+    margin-left: 5px;
+}
+
+.detail-bottom-ask-button {
+    background-color: transparent;
+    border: none;
+    color: #ff5833;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+}
+
+.detail-bottom-ask-nickname {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.detail-bottom-ask-created {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* .detail-bottom-ask-table {
+    border-collapse: separate;
+    border-spacing: 12px 0;
+} */
+
+/* .detail-bottom-ask-table td {
+    vertical-align: middle;
+} */
+
+.detail-bottom-ask-content {
+    font-size: 14px;
+}
+
+.detail-bottom-ask-Q,
+.detail-bottom-ask-A {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff5833;
+}
+
+.detail-bottom-ask-storeName {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.detail-bottom-ask-return {
+    font-size: 14px;
+}
+
+.detail-bottom-ask-return-created {
+    font-size: 14px;
+}
+
+.detail-bottom-ask {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-product-bottom-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+.detail-product-bottom {
+    display: flex;
+    align-items: flex-start; /* 좌우 정렬 */
+}
+
+.detail-bottom-right {
+    position: sticky;
+    top: 95px; /* 원하는 위치 */
+    height: fit-content; /* 부모 높이에 맞춰 조절 */
+}
+
+/* 배송/환불 */
+
+.detail-bottom-return-div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.detail-bottom-return-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.detail-bottom-return-title > i {
+    margin-right: 5px;
+}
+
+.detail-bottom-return-table td {
+    border-bottom: 1px solid #dde1eb;
+    font-size: 14px;
+}
+
+.detail-bottom-return-table-first-td {
+    width: 100px;
+    height: 50px;
+    color: #6d758f;
+}
+
+.detail-bottom-return-second-div,
+.detail-bottom-return-third-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.detail-bottom-return-second-div a {
+    text-decoration: none;
+    color: #6d758f;
+    font-weight: 600;
+}
+
+.detail-bottom-return-second-div > div {
+    font-size: 14px;
+}
+
+.detail-bottom-return-third-div > div {
+    font-size: 14px;
+}
+
+.detail-bottom-return-third-div-span {
+    font-size: 12px;
+    color: #6d758f;
+}
+
+/* 문의하기 모달 */
+.modal-dialog {
+    display: flex;
+    align-items: center; /* 세로 중앙 */
+    justify-content: center; /* 가로 중앙 */
+    min-height: 100vh; /* 화면 높이 */
+}
+
+.ask-modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ask-title {
+    font-size: 16px;
+}
+
+.ask-modal-body-input {
+    height: 150px;
+    resize: none;
+}
+.ask-modal-body-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.ask-modal-body-button-div {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.ask-modal-body-private {
+    margin-right: 5px;
+    outline: none;
+    box-shadow: none; /* 일부 브라우저에서 그림자도 제거 */
+}
+.ask-modal-button {
+    font-size: 13px;
+    font-weight: 600;
+    height: 40px;
+}
+
+.ask-modal-back {
+    width: 60px;
+    background-color: transparent;
+    border: 1px solid #e1e4ed;
+    border-radius: 5px;
+    color: #6d758f;
+}
+
+.ask-modal-write {
+    width: 90px;
+    background-color: #ff5833;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.ask-modal-private-span {
+    font-size: 14px;
+}
+
+.test {
+    accent-color: #ff5833;
+    zoom: 1.3;
+}
