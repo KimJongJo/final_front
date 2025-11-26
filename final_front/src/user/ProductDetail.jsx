@@ -186,7 +186,63 @@ export default function ProductDetail() {
                             </div>
 
                             {/* 문의 */}
-                            <div></div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <span>문의</span>
+                                        {/* 문의 수 */}
+                                        <span>16 </span>
+                                    </div>
+                                    {/* 문의 하기 버튼 */}
+                                    <button>문의하기</button>
+                                </div>
+                                <div>
+                                    {/* 문의 사용자 닉네임 */}
+                                    <span>닉네임</span>
+                                    {/* 문의 날짜 */}
+                                    <span>2025년 11월 09일 12시 12분</span>
+                                </div>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>Q</span>
+                                            </td>
+                                            <td>
+                                                {/* 문의 내용 */}
+                                                <span>언제쯤 출고될지 대강 알 수 있을까요?</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>A</span>
+                                            </td>
+                                            <td>
+                                                {/* 자재업체 이름 */}
+                                                <span>자재업체이름</span>
+                                                {/* 답변 날짜 */}
+                                                <span>2025년 11월 09일 12시 12분</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <div>
+                                                    안녕하세요 고객님 <br />
+                                                    우선 이용에 불편드려서 죄송합니다. <br />
+                                                    현재 출고는 완료되었으나, <br />
+                                                    택배사 물량과다로 스캔 작업 지연되고 있습니다. <br />
+                                                    금일 저녁~익일 새벽에 배송조회 가능 할 것 같습니다. <br />
+                                                    시간 양해 부탁드립니다. <br />
+                                                    불편드려서 죄송합니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div></div>
+                                <div></div>
+                            </div>
 
                             {/* 배송/환불 */}
                             <div></div>
