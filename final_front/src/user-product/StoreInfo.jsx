@@ -1,5 +1,6 @@
-import "../css/StoreInfo.css";
+import "../css/user-product/StoreInfo.css";
 import Product from "./Product";
+import { useState } from "react";
 
 export default function StoreInfo() {
     const store = {
@@ -46,6 +47,23 @@ export default function StoreInfo() {
         },
     ];
 
+    const [cateNo, setCateNo] = useState(1);
+
+    const pCate = [
+        { cateNo: 1, name: "전체" },
+        { cateNo: 2, name: "주방" },
+        { cateNo: 3, name: "욕실" },
+        { cateNo: 4, name: "중문/도어" },
+        { cateNo: 5, name: "폴딩도어" },
+        { cateNo: 6, name: "벽지/장판/마루" },
+        { cateNo: 7, name: "타일" },
+        { cateNo: 8, name: "시트/필름" },
+        { cateNo: 9, name: "스위치/콘센트" },
+        { cateNo: 10, name: "커튼블라인드" },
+        { cateNo: 11, name: "페인트" },
+        { cateNo: 12, name: "조명" },
+    ];
+
     return (
         <div className="body-div">
             <div className="StoreInfo-main-div">
@@ -84,11 +102,56 @@ export default function StoreInfo() {
                 </div>
 
                 {/* 베스트 상품 */}
-                <div className="store-best-product">
-                    {bestProduct.map((product) => (
-                        <Product product={product} />
-                    ))}
+                <div className="">
+                    <span className="font-18 semibold">베스트 상품</span>
+                    <div className="store-best-product">
+                        {bestProduct.map((product) => (
+                            <Product product={product} />
+                        ))}
+                    </div>
                 </div>
+
+                {/* 카테고리별 상품 모음 */}
+
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+
+                <div>
+                    <div className="store-item-cate-div">
+                        {pCate.map((cate) => (
+                            <button onClick={() => setCateNo(cate.cateNo)} className={cateNo === cate.cateNo ? "store-select-cate" : "store-default-cate"}>
+                                {cate.name}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="">
+                        <div className="store-best-product">
+                            {bestProduct.map((product) => (
+                                <Product product={product} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
+                {/* 업체가 판매하는 카테고리만 보여주기 */}
             </div>
         </div>
     );

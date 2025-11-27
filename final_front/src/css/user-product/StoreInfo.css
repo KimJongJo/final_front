@@ -1,5 +1,8 @@
 .StoreInfo-main-div {
     width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
 
 .store-info-top-div {
@@ -41,4 +44,31 @@
 .store-info-under-div {
     display: flex;
     align-items: center;
+}
+
+.store-best-product {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.store-item-cate-div {
+    display: flex;
+    gap: 15px;
+}
+
+.store-select-cate,
+.store-default-cate {
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+}
+
+.store-select-cate {
+    color: #ff5833;
+}
+
+.store-default-cate {
+    color: #303441;
 }

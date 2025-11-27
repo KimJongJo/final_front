@@ -1,4 +1,4 @@
-import "../css/ProductOrder.css";
+import "../css/user-product/ProductOrder.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useEffect, useState } from "react";
 import { Input } from "reactstrap";
@@ -194,7 +194,7 @@ export default function ProductOrder() {
                                                         <Input className="product-order-check-input font-15" />
                                                         <i className="bi bi-at email-icon"></i>
                                                         <select className="product-order-check-email-select font-15" id="emailDomain" defaultValue="none">
-                                                            <option value="none" disabled>
+                                                            <option value="none" hidden>
                                                                 선택
                                                             </option>
                                                             <option value="gmail.com">gmail.com</option>

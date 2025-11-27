@@ -1,6 +1,6 @@
 import { Input } from "reactstrap";
 import { useState } from "react";
-import "../css/ProductList.css";
+import "../css/user-product/ProductList.css";
 import Product from "./Product";
 
 export default function ProductList() {

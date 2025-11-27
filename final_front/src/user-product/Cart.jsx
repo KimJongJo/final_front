@@ -1,4 +1,4 @@
-import "../css/Cart.css";
+import "../css/user-product/Cart.css";
 
 export default function Cart() {
     return (
