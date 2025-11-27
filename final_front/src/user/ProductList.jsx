@@ -148,16 +148,19 @@ export default function ProductList() {
                 <div
                     style={{
                         display: "flex",
-                        flexWrap: "wrap", // 줄바꿈 허용
+                        flexWrap: "wrap",
                         rowGap: "38px", // 위아래 간격
-                        columnGap: "24px", // 좌우 간격
+                        columnGap: "46.66px", // 좌우 간격 계산
+                        width: "1200px",
+                        justifyContent: "flex-start", // 좌측 정렬
+                        boxSizing: "border-box",
                     }}
                 >
                     {[...Array(total)].map((_, idx) => (
                         <div
                             key={idx}
                             style={{
-                                flex: "1 0 calc((100% - 3 * 24px) / 4)", // 좌우 gap 고려
+                                flex: "0 0 265px", // 고정 너비
                                 boxSizing: "border-box",
                             }}
                         >

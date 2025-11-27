@@ -1,0 +1,61 @@
+.Cart-main-div {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+}
+
+/* 왼쪽 장바구니 목록 */
+.cart-product-info-list {
+    width: 870px;
+}
+
+/* 오른쪽 결제 box */
+.cart-pay-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 260px;
+    height: 210px;
+    align-items: center;
+}
+
+.cart-pay-box-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 215px;
+    border: 1px solid #eceff1;
+    width: 100%;
+    padding: 20px;
+    height: 150px;
+}
+
+.cart-pay-box-top-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-pay-box-bottom-button {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #ff5833;
+    height: 50px;
+}
+
+.cart-pay-box-top-last-div {
+    padding-top: 10px;
+    border-top: 1px solid #eceff1;
+}
+
+.cart-pay-box-top-second-div {
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.total-price-info {
+    color: #ff5833;
+}

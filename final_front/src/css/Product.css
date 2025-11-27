@@ -1,5 +1,5 @@
 .Product-card {
-    width: 280px;
+    width: 265px;
     height: 450px;
     text-decoration-line: none;
     color: unset; /* 부모 색상을 강제로 초기화 */
@@ -7,7 +7,7 @@
 
 .product-image {
     position: relative; /* 하트 위치를 부모 기준으로 잡기 위해 */
-    width: 100%;
+    width: 265px;
     height: 300px;
 }
 
@@ -22,12 +22,12 @@
     bottom: 10px;
     right: 10px;
     font-size: 24px;
-    color: red;
+    color: #ff5833;
     cursor: pointer;
 }
 
 .product-info {
-    width: 280px;
+    width: 265px;
     margin-top: 24px;
 }
 
