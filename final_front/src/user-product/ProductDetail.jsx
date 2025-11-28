@@ -24,7 +24,9 @@ export default function ProductDetail() {
 
     const handleNavClick = (item) => {
         setBottomSelect(item.id);
-        item.ref.current?.scrollIntoView({ behavior: "smooth" });
+        // item.ref.current?.scrollIntoView({ behavior: "auto", block: "start" });
+        const top = item.ref.current.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: top, behavior: "instant" });
     };
 
     useEffect(() => {

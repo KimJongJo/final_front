@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../css/user-expert/ExpertProfile.css";
 import ExpertReviewCard from "./ExpertReviewCard";
 import ExpertQuestion from "./ExpertQuestion";
@@ -13,12 +13,55 @@ export default function ExpertProfile() {
         address: "서울시 금천구 가산동",
     };
 
+    const infoRef = useRef(null);
+    const portfolioRef = useRef(null);
+    const reviewRef = useRef(null);
+    const questionRef = useRef(null);
+
     const expertDetail = [
-        { detailNo: 1, name: "전문가 정보" },
-        { detailNo: 2, name: "포트폴리오" },
-        { detailNo: 3, name: "리뷰" },
-        { detailNo: 4, name: "질문답변" },
+        { detailNo: 1, name: "전문가 정보", ref: infoRef },
+        { detailNo: 2, name: "포트폴리오", ref: portfolioRef },
+        { detailNo: 3, name: "리뷰", ref: reviewRef },
+        { detailNo: 4, name: "질문답변", ref: questionRef },
     ];
+
+    const handleNavClick = (item) => {
+        setSelectInfoCateNo(item.detailNo);
+
+        const top = item.ref.current.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: top, behavior: "instant" });
+    };
+
+    useEffect(() => {
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5, // 50% 보이면 해당 섹션으로 인식
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // 어떤 ref가 보였는지 찾기
+                    const visibleSection = expertDetail.find((item) => item.ref.current === entry.target);
+                    if (visibleSection) {
+                        setSelectInfoCateNo(visibleSection.detailNo);
+                    }
+                }
+            });
+        }, options);
+
+        // 모든 섹션 observer에 등록
+        expertDetail.forEach((item) => {
+            if (item.ref?.current) observer.observe(item.ref.current);
+        });
+
+        return () => {
+            expertDetail.forEach((item) => {
+                if (item.ref?.current) observer.unobserve(item.ref.current);
+            });
+        };
+    }, []);
 
     const expertReview = [
         {
@@ -83,7 +126,7 @@ export default function ExpertProfile() {
                     <div className="expertProfile-info-category-button-bar">
                         {expertDetail.map((detail) => (
                             <button
-                                onClick={() => setSelectInfoCateNo(detail.detailNo)}
+                                onClick={() => handleNavClick(detail)}
                                 className={selectInfoCateNo === detail.detailNo ? "expertProfile-select-info-cate" : "expertProfile-default-info-cate"}
                                 key={detail.detailNo}
                             >
@@ -97,7 +140,7 @@ export default function ExpertProfile() {
 
                 <div>
                     {/* 전문가 정보 */}
-                    <div className="expertProfile-under-info-div">
+                    <div className="expertProfile-under-info-div" ref={infoRef}>
                         {/* 전문가 정보 div */}
                         <div className="expertProfile-expert-info">
                             <span className="font-18 semibold">전문가 정보</span>
@@ -182,7 +225,7 @@ export default function ExpertProfile() {
                     <hr className="expertProfile-hr" />
 
                     {/* 포트폴리오 */}
-                    <div className="expertProfile-portfolio-div">
+                    <div className="expertProfile-portfolio-div" ref={portfolioRef}>
                         <span className="font-18 semibold">포트폴리오</span>
                         <div>
                             <img className="expertProfile-portfolio" src="/images/이미지테스트.png" />
@@ -192,7 +235,7 @@ export default function ExpertProfile() {
                     <hr className="expertProfile-hr" />
 
                     {/* 리뷰 */}
-                    <div>
+                    <div ref={reviewRef}>
                         <div className="expertProfile-review-score-div">
                             <span className="font-18 semibold">리뷰</span>
                             <div className="expertProfile-review-score">
@@ -218,7 +261,7 @@ export default function ExpertProfile() {
                     </div>
 
                     {/* 질문 답변 */}
-                    <div className="expertProfile-question-answer-div">
+                    <div className="expertProfile-question-answer-div" ref={questionRef}>
                         <span className="font-18 semibold">질문 답변</span>
 
                         {questions.map((question) => (

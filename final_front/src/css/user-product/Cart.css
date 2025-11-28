@@ -9,6 +9,30 @@
     width: 870px;
 }
 
+.cart-top-selectAll-div {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-select-delete-button {
+    border: none;
+    background-color: transparent;
+}
+
+.cart-selectAll-input {
+    accent-color: #ff5833;
+    zoom: 1.3;
+}
+
+.cart-top-selectAll-left-div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 /* 오른쪽 결제 box */
 .cart-pay-box {
     display: flex;

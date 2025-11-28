@@ -58,6 +58,11 @@
     margin-top: 30px;
     width: 100%;
     justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
 }
 
 .expertProfile-select-info-cate,

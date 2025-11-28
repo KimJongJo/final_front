@@ -7,17 +7,19 @@ export default function Cart() {
                 {/* 왼쪽 장바구니 목록 */}
                 <div className="cart-product-info-list">
                     <div>
-                        <span>장바구니</span>
+                        <span className="font-22 semibold">장바구니</span>
                     </div>
-                    <div>
-                        <div>
-                            <input type="checkbox" id="cartSelectAll" />
-                            <label htmlFor="cartSelectAll">모두선택</label>
+                    <div className="cart-top-selectAll-div">
+                        <div className="cart-top-selectAll-left-div">
+                            <input type="checkbox" id="cartSelectAll" className="cart-selectAll-input" />
+                            <label htmlFor="cartSelectAll" className="font-14 medium">
+                                모두선택
+                            </label>
                         </div>
-                        <button>선택삭제</button>
+                        <button className="cart-select-delete-button font-14 medium">선택삭제</button>
                     </div>
                     <table>
-                        <tbody>
+                        <thead>
                             <tr>
                                 <td>
                                     <span>상품정보</span>
@@ -35,7 +37,8 @@ export default function Cart() {
                                     <span>배송비</span>
                                 </td>
                             </tr>
-                        </tbody>
+                        </thead>
+                        <tbody></tbody>
                     </table>
                 </div>
 
