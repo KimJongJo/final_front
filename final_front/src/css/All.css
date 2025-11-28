@@ -48,12 +48,20 @@
     font-size: 24px;
 }
 
+.medium {
+    font-weight: 500;
+}
+
 .semibold {
     font-weight: 600;
 }
 
-.medium {
-    font-weight: 500;
+.bold {
+    font-weight: 700;
+}
+
+.mainColor {
+    color: #ff5833;
 }
 
 /* 폰트 */

@@ -8,6 +8,8 @@ import Cart from "./user-product/Cart";
 import StoreInfo from "./user-product/StoreInfo";
 import Experts from "./user-expert/Experts";
 import Expert from "./user-expert/Expert";
+import ExpertProfile from "./user-expert/ExpertProfile";
+import ExpertReviewCard from "./user-expert/ExpertReviewCard";
 
 function App() {
     return (
@@ -19,8 +21,10 @@ function App() {
             {/* <ProductOrderComplate /> */}
             {/* <Cart /> */}
             {/* <StoreInfo /> */}
-            <Experts />
+            {/* <Experts /> */}
             {/* <Expert /> */}
+            <ExpertProfile />
+            {/* <ExpertReviewCard /> */}
         </>
     );
 }
