@@ -12,6 +12,7 @@
 .cart-top-selectAll-div {
     margin-top: 30px;
     width: 100%;
+    height: 42px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,6 +32,64 @@
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.cart-product-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+.cart-product-info-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-table {
+    width: 100%;
+}
+
+.cart-product-img-info-div {
+    display: flex;
+    gap: 14px;
+}
+
+.cart-table-trtd {
+    border-top: 1px solid #6d758f;
+}
+
+.cart-table-trtd > td {
+    text-align: center;
+    height: 42px;
+}
+
+.cart-table-trtd span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.store-row td {
+    border-top: 1px solid #6d758f;
+    border-bottom: 1px solid #e6e6e6;
+    height: 42px;
+}
+
+.store-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-store-info-a {
+    text-decoration-line: none;
+    color: #303441;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-product-under-tr > td {
+    padding: 30px 0;
 }
 
 /* 오른쪽 결제 box */

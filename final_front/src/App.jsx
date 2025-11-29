@@ -11,8 +11,8 @@ import Expert from "./user-expert/Expert";
 import ExpertProfile from "./user-expert/ExpertProfile";
 import ExpertReviewCard from "./user-expert/ExpertReviewCard";
 import ExpertOrder from "./user-expert/ExpertOrder";
-import MarketOrders from "./text";
 import { BrowserRouter } from "react-router-dom";
+import FindExpert from "./user-expert/FindExpert";
 
 function App() {
     return (
@@ -22,16 +22,14 @@ function App() {
             {/* <ProductDetail /> */}
             {/* <ProductOrder /> */}
             {/* <ProductOrderComplate /> */}
-            <Cart />
+            {/* <Cart /> */}
             {/* <StoreInfo /> */}
             {/* <Experts /> */}
             {/* <Expert /> */}
             {/* <ExpertProfile /> */}
             {/* <ExpertReviewCard /> */}
             {/* <ExpertOrder /> */}
-            {/* <BrowserRouter>
-                <MarketOrders />
-            </BrowserRouter> */}
+            <FindExpert />
         </>
     );
 }
