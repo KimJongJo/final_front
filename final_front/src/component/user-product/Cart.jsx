@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/user-product/Cart.css";
+import "../../css/user-product/Cart.css";
 
 export default function Cart() {
     const [checkedItems, setCheckedItems] = useState({});
