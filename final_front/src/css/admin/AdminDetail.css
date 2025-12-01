@@ -86,6 +86,11 @@
     height: 50px;
 }
 
+.admin-detail-tr-td-intro {
+    width: 120px;
+    height: 122px;
+}
+
 .admin-detail-select-btn,
 .admin-detail-default-btn {
     width: 135px;
@@ -148,4 +153,68 @@
 .admin-detail-second-table-td-div {
     display: flex;
     flex-direction: column;
+}
+
+.admin-detail-under-table-div {
+    height: 300px;
+}
+
+/* 전문가 */
+
+.admin-detail-expert-service {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-detail-expert-service-badge {
+    padding: 5px 15px;
+    border: 1px solid #e0e5eb;
+    border-radius: 30px;
+}
+
+.admin-detail-table-header-div {
+    padding: 10px 0;
+    border-bottom: 2px solid #303441;
+}
+
+.admin-detail-last-table-div {
+    margin-bottom: 50px;
+}
+
+.admin-detail-table-matching-textarea {
+    border: 1px solid #f1f3f7;
+    height: 117px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.admin-detail-table-sales-detail-table td {
+    text-align: center;
+}
+
+.admin-userList-report-radio-div {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.admin-detail-report-comment-input {
+    width: 600px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #303441;
+}
+.admin-detail-report-complate-button-div {
+    margin-bottom: 50px;
+}
+
+.admin-detail-report-complate-button-div > button {
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #303441;
 }

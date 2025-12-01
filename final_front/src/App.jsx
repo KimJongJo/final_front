@@ -25,6 +25,13 @@ import PaymentHistory from "./component/admin/PaymentHistory";
 import Membership from "./component/admin/Membership";
 import InquiryList from "./component/admin/InquiryList";
 import AdminUserDetail from "./component/admin/AdminUserDetail";
+import AdminExpertDetail from "./component/admin/AdminExpertDetail";
+import AdminStoreDetail from "./component/admin/AdminStoreDetail";
+import AdminRentalDetail from "./component/admin/AdminRentalDetail";
+import AdminPaymentDetail from "./component/admin/AdminPaymentDetail";
+import AdminMatchingDetail from "./component/admin/AdminMatchingDetail";
+import AdminSalesDetail from "./component/admin/AdminSalesDetail";
+import AdminReportDetail from "./component/admin/AdminReportDetail";
 
 function App() {
     return (
@@ -34,7 +41,7 @@ function App() {
             {/* <ProductDetail /> */}
             {/* <ProductOrder /> */}
             {/* <ProductOrderComplate /> */}
-            <Cart />
+            {/* <Cart /> */}
             {/* <StoreInfo /> */}
             {/* <Experts /> */}
             {/* <Expert /> */}
@@ -56,6 +63,13 @@ function App() {
             {/* <InquiryList /> */}
 
             {/* <AdminUserDetail /> */}
+            {/* <AdminExpertDetail /> */}
+            {/* <AdminStoreDetail /> */}
+            {/* <AdminRentalDetail /> */}
+            {/* <AdminPaymentDetail /> */}
+            {/* <AdminMatchingDetail /> */}
+            {/* <AdminSalesDetail /> */}
+            <AdminReportDetail />
         </>
     );
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../css/admin/AdminUserList.css";
 import AdminSidebar from "./AdminNav";
-import { Input, Table } from "reactstrap";
+import { Input, Table, Modal, ModalBody } from "reactstrap";
 
 export default function AdminSwitchAccountRequests() {
     // 전문 서비스
@@ -40,6 +40,30 @@ export default function AdminSwitchAccountRequests() {
         },
     ];
 
+    const modalTest = {
+        userNo: 1,
+        userName: "홍길동",
+        peopleCount: 5,
+        major: "수리",
+        userTel: "010-1234-1234",
+        requestedAt: "2025-11-09",
+        switchStateCode: 1,
+        businessNumber: "123-12-12345",
+        address: "서울시 금천구",
+        bank: "국민",
+        accountNum: "000000-00-000000",
+    };
+
+    const storeTest = {
+        userNo: 1,
+        storeName: "홍길동",
+        tel: "010-1234-1234",
+        homeLink: "https://",
+        businessNumber: "123-12-12345",
+        bank: "국민",
+        accountNum: "000000-00-000000",
+    };
+
     const testUser = [
         {
             userNo: 1,
@@ -52,7 +76,7 @@ export default function AdminSwitchAccountRequests() {
             businessNumber: "123-12-12345",
         },
         {
-            userNo: 1,
+            userNo: 2,
             userName: "홍길동",
             peopleCount: 5,
             major: "수리",
@@ -62,7 +86,7 @@ export default function AdminSwitchAccountRequests() {
             businessNumber: "123-12-12345",
         },
         {
-            userNo: 1,
+            userNo: 3,
             userName: "홍길동",
             peopleCount: 5,
             major: "수리",
@@ -137,6 +161,15 @@ export default function AdminSwitchAccountRequests() {
         setDefaultColumn(1);
         setKeyword("");
     };
+
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
+
+    const closeBtn = (
+        <button className="close" onClick={toggle} type="button">
+            &times;
+        </button>
+    );
 
     // const testUser = [];
 
@@ -268,7 +301,7 @@ export default function AdminSwitchAccountRequests() {
                                 </thead>
                                 <tbody>
                                     {users.map((user) => (
-                                        <tr key={user.userNo}>
+                                        <tr onClick={toggle} key={user.userNo}>
                                             {columns.map((col) =>
                                                 col.key === "switchStateCode" ? (
                                                     <td key={col.key}>
@@ -298,6 +331,251 @@ export default function AdminSwitchAccountRequests() {
                                     ))}
                                 </tbody>
                             </Table>
+
+                            <Modal className="admin-custom-modal" style={{ width: "960px" }} isOpen={modal} toggle={toggle}>
+                                <ModalBody>
+                                    {defaultRole === 1 ? (
+                                        <div className="admin-userList-switchId-modal">
+                                            <div>
+                                                <div className="admin-userList-switchId-firstTd">
+                                                    <span className="font-18 semibold">프로필</span>
+                                                </div>
+                                                <table className="admin-userList-switchId-modal-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd admin-modal-firstTd">
+                                                                <span className="font-14">활동명</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.userName}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">전문분야</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.major}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">제공서비스</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.userName}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">사업자 번호</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.businessNumber}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">활동지역</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.address}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">직원수</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.peopleCount}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">은행</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.bank}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">계좌번호</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{modalTest.accountNum}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div>
+                                                <div className="admin-userList-switchId-firstTd">
+                                                    <span className="font-18 semibold">자격증</span>
+                                                </div>
+                                                <div className="admin-userList-switchId-modal-imgs-div">
+                                                    <img src="/images/이미지테스트.png" className="admin-userList-switchId-modal-imgs" />
+                                                    <img src="/images/이미지테스트.png" className="admin-userList-switchId-modal-imgs" />
+                                                    <img src="/images/이미지테스트.png" className="admin-userList-switchId-modal-imgs" />
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div className="admin-userList-switchId-firstTd">
+                                                    <span className="font-18 semibold">전환 처리</span>
+                                                </div>
+                                                <table className="admin-userList-switchId-switch-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">처리</span>
+                                                            </td>
+                                                            <td>
+                                                                <div className="admin-userList-modal-radio-div">
+                                                                    <div className="admin-userList-modal-radio-div-in">
+                                                                        <input className="admin-userList-modal-radio" type="radio" name="switch" id="switch-ok" />
+                                                                        <label htmlFor="switch-ok" className="font-14">
+                                                                            전환 승인
+                                                                        </label>
+                                                                    </div>
+                                                                    <div className="admin-userList-modal-radio-div-in">
+                                                                        <input className="admin-userList-modal-radio" type="radio" name="switch" id="switch-no" />
+                                                                        <label htmlFor="switch-no" className="font-14">
+                                                                            반려
+                                                                        </label>
+
+                                                                        <input className="admin-userList-modal-reason-input font-14" type="text" placeholder="반려 사유를 작성해주세요" />
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div className="admin-userList-switchId-buttons">
+                                                <button className="admin-userList-switchId-backBtn font-12 semibold">취소</button>
+                                                <button className="admin-userList-switchId-endBtn font-12 semibold">처리 완료</button>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="admin-userList-switchId-modal">
+                                            <div>
+                                                <div className="admin-userList-switchId-firstTd">
+                                                    <span className="font-18 semibold">프로필</span>
+                                                </div>
+                                                <table className="admin-userList-switchId-modal-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd admin-modal-firstTd">
+                                                                <span className="font-14">업체명</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{storeTest.storeName}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">전화번호</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{storeTest.tel}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">사업자 번호</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{storeTest.businessNumber}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">취급 품목</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{storeTest.businessNumber}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">홈페이지</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{storeTest.homeLink}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">은행</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{storeTest.bank}</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">계좌번호</span>
+                                                            </td>
+                                                            <td>
+                                                                <span className="font-14">{storeTest.accountNum}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div>
+                                                <div className="admin-userList-switchId-firstTd">
+                                                    <span className="font-18 semibold">사업자 등록증</span>
+                                                </div>
+                                                <div className="admin-userList-switchId-modal-imgs-div">
+                                                    <img src="/images/이미지테스트.png" className="admin-userList-switchId-modal-imgs" />
+                                                </div>
+                                                <button className="admin-userList-switchId-modal-business-down font-14 semibold">다운로드</button>
+                                            </div>
+
+                                            <div>
+                                                <div className="admin-userList-switchId-firstTd">
+                                                    <span className="font-18 semibold">전환 처리</span>
+                                                </div>
+                                                <table className="admin-userList-switchId-switch-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td className="admin-userList-switchId-modal-table-trtd">
+                                                                <span className="font-14">처리</span>
+                                                            </td>
+                                                            <td>
+                                                                <div className="admin-userList-modal-radio-div">
+                                                                    <div className="admin-userList-modal-radio-div-in">
+                                                                        <input className="admin-userList-modal-radio" type="radio" name="switch" id="switch-ok" />
+                                                                        <label htmlFor="switch-ok" className="font-14">
+                                                                            전환 승인
+                                                                        </label>
+                                                                    </div>
+                                                                    <div className="admin-userList-modal-radio-div-in">
+                                                                        <input className="admin-userList-modal-radio" type="radio" name="switch" id="switch-no" />
+                                                                        <label htmlFor="switch-no" className="font-14">
+                                                                            반려
+                                                                        </label>
+
+                                                                        <input className="admin-userList-modal-reason-input font-14" type="text" placeholder="반려 사유를 작성해주세요" />
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div className="admin-userList-switchId-buttons">
+                                                <button onClick={() => setModal(false)} className="admin-userList-switchId-backBtn font-12 semibold">
+                                                    취소
+                                                </button>
+                                                <button className="admin-userList-switchId-endBtn font-12 semibold">처리 완료</button>
+                                            </div>
+                                        </div>
+                                    )}
+                                </ModalBody>
+                            </Modal>
 
                             {/* 페이징 div */}
                             <div className="admin-userList-paging-bar">

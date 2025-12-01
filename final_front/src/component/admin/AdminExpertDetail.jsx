@@ -2,49 +2,51 @@ import { useState } from "react";
 import "../../css/admin/AdminDetail.css";
 import AdminSidebar from "./AdminNav";
 
-export default function AdminUserDetail() {
+export default function AdminExpertDetail() {
     const test = {
         profileImg: "/images/기본회원프로필.jpg",
-        name: "홍길동",
         nickname: "길동이",
-        username: "hong123@naver.com",
-        userTel: "010-0000-0000",
-        birthDate: "2000-01-01",
-        gender: "male",
+        expertState: 1,
+        membership: "가입",
+        category: "도어 시공",
+        service: ["바닥 시공", "도어 시공"],
+        businessNumber: "123-12-12345",
+        bank: "국민",
+        accountNumber: "000000-00-000000",
+        serviceArea: "서울시 금천구",
+        employeeCount: 6,
     };
 
     const testTable1 = [
         {
-            rentalNo: 1,
-            productName: "공구 이름",
-            provider: "홍길동",
-            rentalDate: "2025-11-09",
-            rentalPrice: 10000,
-            rentalState: "결제 완료",
+            matchingNo: 1,
+            customerName: "홍길동",
+            constructionContent: "욕실 리모델링",
+            contractDate: "2025-11-09",
+            startWorkDate: "2025-11-09",
+            endWorkDate: "2025-11-09",
+            workState: "작업 완료",
         },
     ];
 
     const testTable2 = [
         {
-            orderNo: 1,
-            storeName: "자재 업체",
-            productName: "자재 명",
-            productSize: "120x120x1200mm",
-            productColor: "블랙",
-            orderDate: "2025-11-09",
-            orderPrice: 10000,
-            orderState: "결제 상태",
+            settlementId: 1234,
+            salesAmount: 22000000,
+            commission: 5,
+            settlementAmount: 22000000,
+            settlementState: "정산 완료",
+            settlementDate: "2025-11-09",
         },
     ];
 
     const testTable3 = [
         {
-            matchingNo: 1,
-            expertName: "홍길동",
-            service: "홍길동",
-            matchingDate: "2025-11-09",
-            totalPrice: 1000000,
-            matchingState: "결제 완료",
+            reportId: 1,
+            reporterName: "홍길동",
+            reportReason: "작업불만",
+            reportDate: "2025-11-09",
+            reportState: "완료",
         },
     ];
 
@@ -53,43 +55,42 @@ export default function AdminUserDetail() {
     const btnItems = [
         {
             btnId: 1,
-            label: "대여 내역",
+            label: "작업 내역",
         },
         {
             btnId: 2,
-            label: "구매 내역",
+            label: "정산 내역",
         },
         {
             btnId: 3,
-            label: "전문가 매칭 내역",
+            label: "신고 내역",
         },
     ];
 
     const columns =
         selectBtn === 1
             ? [
-                  { label: "대여번호", key: "rentalNo" },
-                  { label: "공구명", key: "productName" },
-                  { label: "빌려준 사람", key: "provider" },
-                  { label: "대여 날짜", key: "rentalDate" },
-                  { label: "결제 금액", key: "rentalPrice" },
-                  { label: "결제 상태", key: "rentalState" },
+                  { label: "고객명", key: "customerName" },
+                  { label: "시공 내용", key: "constructionContent" },
+                  { label: "계약 일자", key: "contractDate" },
+                  { label: "작업 기간", key: "workDuration" },
+                  { label: "작업 상태", key: "workState" },
               ]
             : selectBtn === 2
             ? [
-                  { label: "자재 업체 명", key: "storeName" },
-                  { label: "자재 상품 명", key: "productName" },
-                  { label: "규격 / 색상", key: "sizeAndColor" },
-                  { label: "구매 날짜", key: "orderDate" },
-                  { label: "결제 금액", key: "orderPrice" },
-                  { label: "결제 상태", key: "orderState" },
+                  { label: "정산 번호", key: "settlementId" },
+                  { label: "매출 금액", key: "salesAmount" },
+                  { label: "수수료", key: "commission" },
+                  { label: "정산 금액", key: "settlementAmount" },
+                  { label: "정산 상태", key: "settlementState" },
+                  { label: "정산 일자", key: "settlementDate" },
               ]
             : [
-                  { label: "전문가명", key: "expertName" },
-                  { label: "시공 분야", key: "service" },
-                  { label: "작업 일자", key: "workDate" },
-                  { label: "견적 금액", key: "estimateAmount" },
-                  { label: "결제 상태", key: "paymentStatus" },
+                  { label: "신고 번호", key: "reportId" },
+                  { label: "신고자", key: "reporterName" },
+                  { label: "신고 사유", key: "reportReason" },
+                  { label: "신고일", key: "reportDate" },
+                  { label: "처리 상태", key: "reportState" },
               ];
 
     return (
@@ -112,7 +113,7 @@ export default function AdminUserDetail() {
                     <div className="admin-detail-table-second-div">
                         {/* 프로필 헤더 */}
                         <div className="admin-detail-profile-header">
-                            <span className="font-18 bold admin-detail-profile-span">회원 정보</span>
+                            <span className="font-18 bold admin-detail-profile-span">전문가 정보</span>
                         </div>
 
                         {/* 프로필 테이블 */}
@@ -120,7 +121,7 @@ export default function AdminUserDetail() {
                             <tbody>
                                 <tr>
                                     <td className="admin-detail-profileImg-td">
-                                        <span>프로필 이미지</span>
+                                        <span className="font-14">프로필 이미지</span>
                                     </td>
                                     <td>
                                         <img className="admin-detail-user-profileImg" src={test.profileImg} />
@@ -128,50 +129,86 @@ export default function AdminUserDetail() {
                                 </tr>
                                 <tr>
                                     <td className="admin-detail-tr-td">
-                                        <span>이름</span>
+                                        <span className="font-14">활동명</span>
                                     </td>
                                     <td>
-                                        <span>{test.name}</span>
+                                        <span className="font-14">{test.nickname}</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="admin-detail-tr-td">
-                                        <span>닉네임</span>
+                                        <span className="font-14">활동상태</span>
                                     </td>
                                     <td>
-                                        <span>{test.nickname}</span>
+                                        <span className="font-14">{test.expertState}</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="admin-detail-tr-td">
-                                        <span>아이디</span>
+                                        <span className="font-14">멤버십 가입 유무</span>
                                     </td>
                                     <td>
-                                        <span>{test.username}</span>
+                                        <span className="font-14">{test.membership}</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="admin-detail-tr-td">
-                                        <span>휴대폰 번호</span>
+                                        <span className="font-14">대표 카테고리</span>
                                     </td>
                                     <td>
-                                        <span>{test.userTel}</span>
+                                        <span className="font-14">{test.category}</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="admin-detail-tr-td">
-                                        <span>생년월일</span>
+                                        <span className="font-14">제공서비스</span>
                                     </td>
                                     <td>
-                                        <span>{test.birthDate}</span>
+                                        <div className="admin-detail-expert-service">
+                                            {test.service.map((service) => (
+                                                <div className="admin-detail-expert-service-badge font-14">{service}</div>
+                                            ))}
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="admin-detail-tr-td">
-                                        <span>성별</span>
+                                        <span className="font-14">사업자 번호</span>
                                     </td>
                                     <td>
-                                        <span>{test.gender === "male" ? "남성" : "여성"}</span>
+                                        <span className="font-14">{test.businessNumber}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="admin-detail-tr-td">
+                                        <span className="font-14">은행</span>
+                                    </td>
+                                    <td>
+                                        <span className="font-14">{test.bank}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="admin-detail-tr-td">
+                                        <span className="font-14">계좌번호</span>
+                                    </td>
+                                    <td>
+                                        <span className="font-14">{test.accountNumber}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="admin-detail-tr-td">
+                                        <span className="font-14">활동지역</span>
+                                    </td>
+                                    <td>
+                                        <span className="font-14">{test.serviceArea}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="admin-detail-tr-td">
+                                        <span className="font-14">직원수</span>
+                                    </td>
+                                    <td>
+                                        <span className="font-14">{test.employeeCount}</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -194,7 +231,7 @@ export default function AdminUserDetail() {
                                     <tr>
                                         {columns.map((column) => (
                                             <td key={column.key}>
-                                                <span>{column.label}</span>
+                                                <span className="font-14">{column.label}</span>
                                             </td>
                                         ))}
                                     </tr>
@@ -202,67 +239,65 @@ export default function AdminUserDetail() {
                                 <tbody>
                                     {selectBtn === 1
                                         ? testTable1.map((table) => (
-                                              <tr key={table.rentalNo}>
+                                              <tr key={table.matchingNo}>
                                                   <td>
-                                                      <span>{table.rentalNo}</span>
+                                                      <span className="font-14">{table.customerName}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.productName}</span>
+                                                      <span className="font-14">{table.constructionContent}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.provider}</span>
+                                                      <span className="font-14">{table.contractDate}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.rentalDate}</span>
+                                                      <span className="font-14">
+                                                          {table.startWorkDate} ~ {table.endWorkDate}
+                                                      </span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.rentalPrice.toLocaleString()}원</span>
-                                                  </td>
-                                                  <td>
-                                                      <span>{table.rentalState}</span>
+                                                      <span className="font-14">{table.workState}</span>
                                                   </td>
                                               </tr>
                                           ))
                                         : selectBtn === 2
                                         ? testTable2.map((table) => (
-                                              <tr key={table.rentalNo}>
+                                              <tr key={table.settlementId}>
                                                   <td>
-                                                      <span>{table.storeName}</span>
+                                                      <span className="font-14">{table.settlementId}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.productName}</span>
+                                                      <span className="font-14">{table.salesAmount.toLocaleString()}원</span>
                                                   </td>
                                                   <td>
-                                                      <div className="admin-detail-second-table-td-div">
-                                                          <span>{table.productSize}</span>
-                                                          <span>{table.productColor}</span>
-                                                      </div>
-                                                  </td>
-                                                  <td>{table.orderDate}</td>
-                                                  <td>
-                                                      <span>{table.orderPrice.toLocaleString()}원</span>
+                                                      <span className="font-14">{table.commission}%</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.orderState}</span>
+                                                      <span className="font-14">{table.settlementAmount.toLocaleString()}원</span>
+                                                  </td>
+                                                  <td>
+                                                      <span className="font-14">{table.settlementState}</span>
+                                                  </td>
+                                                  <td>
+                                                      <span className="font-14">{table.settlementDate}</span>
                                                   </td>
                                               </tr>
                                           ))
                                         : testTable3.map((table) => (
-                                              <tr key={table.matchingNo}>
+                                              <tr key={table.reportId}>
                                                   <td>
-                                                      <span>{table.expertName}</span>
+                                                      <span className="font-14">{table.reportId}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.service}</span>
+                                                      <span className="font-14">{table.reporterName}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.matchingDate}</span>
+                                                      <span className="font-14">{table.reportReason}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.totalPrice.toLocaleString()}원</span>
+                                                      <span className="font-14">{table.reportDate}</span>
                                                   </td>
                                                   <td>
-                                                      <span>{table.matchingState}</span>
+                                                      <span className="font-14">{table.reportState}</span>
                                                   </td>
                                               </tr>
                                           ))}

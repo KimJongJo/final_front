@@ -308,6 +308,110 @@
 /* 전환신청 / 입점신청 */
 /* 전환신청 / 입점신청 */
 
+.admin-userList-switchId-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.admin-userList-switchId-modal-table-trtd {
+    width: 120px;
+}
+
+.admin-userList-switchId-modal-imgs {
+    width: 120px;
+    height: 175px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.admin-userList-switchId-modal-imgs-div {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.admin-custom-modal {
+    --bs-modal-width: 900px;
+}
+
+.admin-userList-modal-radio {
+    accent-color: #ff5833;
+    zoom: 1.3;
+}
+
+.admin-userList-modal-radio-div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-userList-modal-radio-div-in {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.admin-userList-switchId-modal-business-down {
+    width: 76px;
+    height: 34px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+
+    background-color: #303441;
+    color: #ffffff;
+}
+
+.admin-userList-modal-reason-input {
+    width: 240px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid #6a7685;
+    padding-left: 10px;
+}
+
+.admin-userList-switchId-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+.admin-userList-switchId-switch-table {
+    margin-top: 20px;
+}
+
+.admin-userList-switchId-backBtn {
+    border: 1px solid #303441;
+    background-color: transparent;
+    border-radius: 4px;
+    height: 33px;
+    width: 47px;
+}
+
+.admin-userList-switchId-firstTd {
+    border-bottom: 1px solid #303441;
+    padding-bottom: 10px;
+}
+
+.admin-userList-switchId-endBtn {
+    border: none;
+    background-color: #303441;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.admin-userList-switchId-modal-table {
+    width: 100%;
+}
+
+.admin-userList-switchId-modal-table td {
+    height: 50px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
 .request-state-code-1,
 .request-state-code-2,
 .request-state-code-3 {
