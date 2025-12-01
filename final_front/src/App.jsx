@@ -24,6 +24,7 @@ import AdminSalesHistory from "./component/admin/AdminSalesHistory";
 import PaymentHistory from "./component/admin/PaymentHistory";
 import Membership from "./component/admin/Membership";
 import InquiryList from "./component/admin/InquiryList";
+import AdminUserDetail from "./component/admin/AdminUserDetail";
 
 function App() {
     return (
@@ -33,7 +34,7 @@ function App() {
             {/* <ProductDetail /> */}
             {/* <ProductOrder /> */}
             {/* <ProductOrderComplate /> */}
-            {/* <Cart /> */}
+            <Cart />
             {/* <StoreInfo /> */}
             {/* <Experts /> */}
             {/* <Expert /> */}
@@ -52,7 +53,9 @@ function App() {
             {/* <AdminSalesHistory /> */}
             {/* <PaymentHistory /> */}
             {/* <Membership /> */}
-            <InquiryList />
+            {/* <InquiryList /> */}
+
+            {/* <AdminUserDetail /> */}
         </>
     );
 }
