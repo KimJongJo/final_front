@@ -32,46 +32,48 @@ import AdminPaymentDetail from "./component/admin/AdminPaymentDetail";
 import AdminMatchingDetail from "./component/admin/AdminMatchingDetail";
 import AdminSalesDetail from "./component/admin/AdminSalesDetail";
 import AdminReportDetail from "./component/admin/AdminReportDetail";
+import AdminSettlementList from "./component/admin/AdminSettlementList";
 
 function App() {
-    return (
-        <>
-            {/* <Product /> */}
-            {/* <ProductList /> */}
-            {/* <ProductDetail /> */}
-            {/* <ProductOrder /> */}
-            {/* <ProductOrderComplate /> */}
-            {/* <Cart /> */}
-            {/* <StoreInfo /> */}
-            {/* <Experts /> */}
-            {/* <Expert /> */}
-            {/* <ExpertProfile /> */}
-            {/* <ExpertReviewCard /> */}
-            {/* <ExpertOrder /> */}
-            {/* <FindExpert /> */}
+  return (
+    <>
+      {/* <Product /> */}
+      {/* <ProductList /> */}
+      {/* <ProductDetail /> */}
+      {/* <ProductOrder /> */}
+      {/* <ProductOrderComplate /> */}
+      {/* <Cart /> */}
+      {/* <StoreInfo /> */}
+      {/* <Experts /> */}
+      {/* <Expert /> */}
+      {/* <ExpertProfile /> */}
+      {/* <ExpertReviewCard /> */}
+      {/* <ExpertOrder /> */}
+      {/* <FindExpert /> */}
 
-            {/* <AdminNav /> */}
-            {/* <AdminUserList /> */}
-            {/* <AdminExpertList /> */}
-            {/* <AdminStoreList /> */}
-            {/* <AdminSwitchAccountRequests /> */}
-            {/* <AdminRentalRecords /> */}
-            {/* <AdminReportList /> */}
-            {/* <AdminSalesHistory /> */}
-            {/* <PaymentHistory /> */}
-            {/* <Membership /> */}
-            {/* <InquiryList /> */}
+      {/* <AdminNav /> */}
+      {/* <AdminUserList /> */}
+      {/* <AdminExpertList /> */}
+      {/* <AdminStoreList /> */}
+      {/* <AdminSwitchAccountRequests /> */}
+      {/* <AdminRentalRecords /> */}
+      {/* <AdminReportList /> */}
+      {/* <AdminSalesHistory /> */}
+      {/* <PaymentHistory /> */}
+      {/* <Membership /> */}
+      {/* <InquiryList /> */}
 
-            {/* <AdminUserDetail /> */}
-            {/* <AdminExpertDetail /> */}
-            {/* <AdminStoreDetail /> */}
-            {/* <AdminRentalDetail /> */}
-            {/* <AdminPaymentDetail /> */}
-            {/* <AdminMatchingDetail /> */}
-            {/* <AdminSalesDetail /> */}
-            <AdminReportDetail />
-        </>
-    );
+      {/* <AdminUserDetail /> */}
+      {/* <AdminExpertDetail /> */}
+      {/* <AdminStoreDetail /> */}
+      {/* <AdminRentalDetail /> */}
+      {/* <AdminPaymentDetail /> */}
+      {/* <AdminMatchingDetail /> */}
+      {/* <AdminSalesDetail /> */}
+      {/* <AdminReportDetail /> */}
+      <AdminSettlementList />
+    </>
+  );
 }
 
 export default App;
