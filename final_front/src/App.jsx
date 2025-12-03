@@ -32,6 +32,7 @@ import AdminPaymentDetail from "./component/admin/AdminPaymentDetail";
 import AdminMatchingDetail from "./component/admin/AdminMatchingDetail";
 import AdminSalesDetail from "./component/admin/AdminSalesDetail";
 import AdminReportDetail from "./component/admin/AdminReportDetail";
+import AdminSettlementList from "./component/admin/AdminSettlementList";
 import InquiryReturn from "./component/admin/InquiryReturn";
 
 function App() {
@@ -60,7 +61,7 @@ function App() {
             {/* <AdminReportList /> */}
             {/* <AdminSalesHistory /> */}
             {/* <PaymentHistory /> */}
-            {/* <Membership /> */}
+            <Membership />
             {/* <InquiryList /> */}
 
             {/* <AdminUserDetail /> */}
@@ -71,6 +72,7 @@ function App() {
             {/* <AdminMatchingDetail /> */}
             {/* <AdminSalesDetail /> */}
             {/* <AdminReportDetail /> */}
+            {/* <AdminSettlementList /> */}
             <InquiryReturn />
         </>
     );
