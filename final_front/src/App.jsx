@@ -32,6 +32,7 @@ import AdminPaymentDetail from "./component/admin/AdminPaymentDetail";
 import AdminMatchingDetail from "./component/admin/AdminMatchingDetail";
 import AdminSalesDetail from "./component/admin/AdminSalesDetail";
 import AdminReportDetail from "./component/admin/AdminReportDetail";
+import InquiryReturn from "./component/admin/InquiryReturn";
 
 function App() {
     return (
@@ -69,7 +70,8 @@ function App() {
             {/* <AdminPaymentDetail /> */}
             {/* <AdminMatchingDetail /> */}
             {/* <AdminSalesDetail /> */}
-            <AdminReportDetail />
+            {/* <AdminReportDetail /> */}
+            <InquiryReturn />
         </>
     );
 }

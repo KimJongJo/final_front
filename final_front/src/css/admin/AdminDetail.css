@@ -218,3 +218,18 @@
     color: #ffffff;
     background-color: #303441;
 }
+
+.admin-inquiryReturn-back-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-inquiryReturn-content-div {
+    height: 378px;
+    border-bottom: 1px solid #eaecf0;
+}
+
+.admin-inquiryReturn-input-textarea {
+    resize: none;
+    height: 242px;
+}
